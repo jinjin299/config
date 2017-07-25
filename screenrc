@@ -1,0 +1,59 @@
+# Don't display the copyright page
+startup_message off
+
+#                           #
+#       SCREEN SETTING      #
+#                           #
+
+
+# Sick of full-screen programs like vim remaining in the scrollback buffer after you've closed them? Wouldn't it be great if they'd go away completely just like they do when you're not running screen?
+altscreen on
+
+# tab-completion flash in heading bar
+vbell off
+
+# keep scrollback n lines
+defscrollback 1000
+
+# Doesn't fix scrollback problem on xterm because if you scroll back
+# all you see is the other terminals history.
+# termcapinfo xterm|xterms|xs|rxvt ti@:te@
+
+shell         zsh
+shelltitle "$ |zsh"
+
+# THIS IS THE PRETTY BIT
+#change the hardstatus settings to give an window list at the bottom of the                                                                        
+##screen, with the time and date and with the current window highlighted                                                                            
+
+hardstatus off
+caption always           "%?%F%{= Kk}%:%{=u kR}%?  %h %-024=%{+b} %C%a %D %d %M %Y%{= db}"
+hardstatus alwayslastline "%{= kR} %-Lw%{=b Kk} %n%f %t %{-}%+Lw %=%{= dd}"
+#hardstatus             alwayslastline                                                                                                                          
+#hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+
+
+
+
+#                           #
+#     KEYBOARD SETTING      #
+#                           #
+
+bind s
+
+# PREVIOUS WINDOW
+# Ctrl + Alt + Left from gnome-terminal
+bindkey ^[[1;7C prev
+bindkey ^[h prev
+
+# Ctrl+Alt+Left from putty
+bindkey ^[^[[D prev
+
+# NEXT WINDOW
+# Ctrl + Alt + Right from gnome-terminal
+bindkey ^[[1;7D next
+
+# Ctrl+Alt+Right from putty
+bindkey ^[^[[C next
+bindkey ^[l next
